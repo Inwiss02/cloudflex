@@ -64,7 +64,7 @@ export function PlanStep({ data, onNext, onBack }: PlanStepProps) {
       plan: selectedPlan,
       selectedPlan: {
         name: plan!.name,
-        price: plan!.price,
+        price: plan!.price * 12,
         duration: selectedPlan,
       },
     });
