@@ -12,20 +12,20 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   title: "cloudflex",
-  description: "Created with v0",
-  generator: "v0.app",
+  description: "cloudflex",
+  generator: "cloudflex",
   icons: {
     icon: [
       {
-        url: "/icon-light-32x32.png",
+        url: "/icon.png",
         media: "(prefers-color-scheme: light)",
       },
       {
-        url: "/icon-dark-32x32.png",
+        url: "/icon.png",
         media: "(prefers-color-scheme: dark)",
       },
       {
-        url: "../public/images/icon.png",
+        url: "/icon.png",
         type: "image/png",
       },
     ],

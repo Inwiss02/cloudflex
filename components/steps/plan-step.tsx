@@ -60,11 +60,14 @@ export function PlanStep({ data, onNext, onBack }: PlanStepProps) {
     }
     setError("");
     const plan = plans.find((p) => p.id === selectedPlan);
+    const durationMonths =
+      selectedPlan === "semestre" ? 6 : selectedPlan === "annuel" ? 12 : 24;
+    const totalPrice = plan!.price * durationMonths;
     onNext({
       plan: selectedPlan,
       selectedPlan: {
         name: plan!.name,
-        price: plan!.price * 12,
+        price: totalPrice,
         duration: selectedPlan,
       },
     });
