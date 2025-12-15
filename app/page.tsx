@@ -29,7 +29,7 @@ export default function LandingPage() {
   const [showCursorTagline, setShowCursorTagline] = useState(false);
 
   const heroRef = useRef<HTMLDivElement>(null);
-
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   useEffect(() => {
     const sections = document.querySelectorAll(".animate-on-scroll");
 
@@ -167,7 +167,9 @@ export default function LandingPage() {
             height={32}
             className="h-8 w-auto rounded-lg"
           />
-          <div className="flex items-center gap-6">
+
+          {/* Desktop Menu */}
+          <div className="hidden md:flex items-center gap-6">
             <a
               href="https://www.cloudflex.art/mon-compte"
               className="text-white hover:text-gray-300 transition relative group"
@@ -192,7 +194,68 @@ export default function LandingPage() {
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-500 to-red-500 group-hover:w-full transition-all duration-300"></span>
             </a>
           </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden text-white p-2"
+            aria-label="Toggle menu"
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              {mobileMenuOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              )}
+            </svg>
+          </button>
         </div>
+
+        {/* Mobile Menu Dropdown */}
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-black/95 backdrop-blur-sm border-t border-white/10">
+            <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
+              <a
+                href="https://www.cloudflex.art/mon-compte"
+                className="text-white hover:text-gray-300 transition py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Mon compte
+              </a>
+              <a
+                href="https://www.cloudflex.art/support"
+                className="text-white hover:text-gray-300 transition py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Support
+              </a>
+              <a
+                href="https://overseerr-inwiss.pulse.usbx.me"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-gray-300 transition py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Overseerr
+              </a>
+            </div>
+          </div>
+        )}
       </nav>
 
       {/* Hero Section */}
