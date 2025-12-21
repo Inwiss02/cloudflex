@@ -185,7 +185,7 @@ export default function LandingPage() {
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-500 to-red-500 group-hover:w-full transition-all duration-300"></span>
             </a>
             <a
-              href="https://overseerr-inwiss.pulse.usbx.me"
+              href="https://overseerr-inwiss.karma.usbx.me/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:text-gray-300 transition relative group"
@@ -245,7 +245,7 @@ export default function LandingPage() {
                 Support
               </a>
               <a
-                href="https://overseerr-inwiss.pulse.usbx.me"
+                href="https://overseerr-inwiss.karma.usbx.me/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white hover:text-gray-300 transition py-2"
